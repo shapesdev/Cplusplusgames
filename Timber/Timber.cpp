@@ -3,6 +3,14 @@
 
 using namespace sf;
 
+void UpdateBranches(int seed);
+
+const int NUM_BRANCHES = 6;
+Sprite branches[NUM_BRANCHES];
+
+enum class side { LEFT, RIGHT, NONE };
+side branchPositions[NUM_BRANCHES];
+
 int main()
 {
 	// Create new video mode object
@@ -92,6 +100,15 @@ int main()
 	messageText.setPosition(1920 / 2.0f, 1080 / 2.0f);
 	scoreText.setPosition(20, 20);
 
+	Texture branchTexture;
+	branchTexture.loadFromFile("Graphics/branch.png");
+
+	for (int i = 0; i < NUM_BRANCHES; i++) {
+		branches[i].setTexture(branchTexture);
+		branches[i].setPosition(-2000, -2000);
+		branches[i].setOrigin(220, 20);
+	}
+
 	while (window.isOpen()) {
 
 		// Handle Input
@@ -142,6 +159,8 @@ int main()
 				}
 			}
 
+#pragma region Cloud Updates
+
 			if (!cloud1Active) {
 				srand((int)time(0));
 				cloud1Speed = (rand() % 200);
@@ -190,9 +209,26 @@ int main()
 				}
 			}
 
+#pragma endregion
+
 			std::stringstream ss;
 			ss << "Score = " << score;
 			scoreText.setString(ss.str());
+
+			for (int i = 0; i < NUM_BRANCHES; i++) {
+				float height = i * 150;
+				if (branchPositions[i] == side::LEFT) {
+					branches[i].setPosition(610, height);
+					branches[i].setRotation(180);
+				}
+				else if (branchPositions[i] == side::RIGHT) {
+					branches[i].setPosition(1330, height);
+					branches[i].setRotation(0);
+				}
+				else {
+					branches[i].setPosition(3000, height);
+				}
+			}
 		}
 
 		// Clear everything from last frame
@@ -204,6 +240,10 @@ int main()
 		window.draw(cloudSprite1);
 		window.draw(cloudSprite2);
 		window.draw(cloudSprite3);
+
+		for (int i = 0; i < NUM_BRANCHES; i++) {
+			window.draw(branches[i]);
+		}
 
 		window.draw(treeSprite);
 		window.draw(beeSprite);
@@ -220,4 +260,23 @@ int main()
 	}
 
 	return 0;
+}
+
+void UpdateBranches(int seed) {
+	for (int j = NUM_BRANCHES - 1; j > 0; j--) {
+		branchPositions[j] = branchPositions[j - 1];
+	}
+
+	srand((int)time(0) + seed);
+	int r = (rand() % 5);
+
+	switch (r) {
+		case 0:
+			branchPositions[0] = side::LEFT;
+		case 1:
+			branchPositions[0] = side::RIGHT;
+		default:
+			branchPositions[0] = side::NONE;
+			break;
+	}
 }

@@ -1,2 +1,13 @@
 ﻿  Timber.cpp
-  Timber.vcxproj -> C:\Users\shapes\Documents\GitHub\Cplusplusgames\Timber\Debug\Timber.exe
+C:\Users\User\Documents\GitHub\Cplusplusgames\Timber\Timber.cpp(216,39): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Timber\Timber.cpp(240,39): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Timber\Timber.cpp(282,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Timber\Timber.cpp(285,18): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Timber\Timber.cpp(300,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Timber\Timber.cpp(303,18): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Timber\Timber.cpp(316,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Timber\Timber.cpp(319,18): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Timber\Timber.cpp(332,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Timber\Timber.cpp(335,18): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Timber\Timber.cpp(349,18): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  Timber.vcxproj -> C:\Users\User\Documents\GitHub\Cplusplusgames\Timber\Debug\Timber.exe

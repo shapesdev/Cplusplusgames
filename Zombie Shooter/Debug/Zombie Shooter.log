@@ -1,2 +1,39 @@
-﻿  Zombie Shooter.cpp
-  Zombie Shooter.vcxproj -> C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Debug\Zombie Shooter.exe
+﻿  Player.cpp
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(6,11): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(7,14): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(14,27): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(15,28): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(30,11): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(31,14): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(119,28): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(122,27): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(125,29): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(128,26): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(131,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(136,29): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(140,31): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
+  Zombie Shooter.vcxproj -> C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Debug\Zombie Shooter.exe

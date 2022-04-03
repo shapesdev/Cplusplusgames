@@ -1,12 +1,12 @@
 #include "Player.h"
+#include "TextureHolder.h"
 
 Player::Player() {
 	speed = START_SPEED;
 	health = START_HEALTH;
 	maxHealth = START_HEALTH;
 
-	texture.loadFromFile("Graphics/player.png");
-	sprite.setTexture(texture);
+	sprite = Sprite(TextureHolder::GetTexture("Graphics/player.png"));
 	sprite.setOrigin(25, 25);
 }
 
@@ -66,3 +66,84 @@ int Player::GetHealth() {
 	return health;
 }
 
+void Player::MoveLeft() {
+	leftPressed = true;
+}
+
+void Player::MoveRight() {
+	rightPressed = true;
+}
+
+void Player::MoveDown() {
+	downPressed = true;
+}
+
+void Player::MoveUp() {
+	upPressed = true;
+}
+
+void Player::StopLeft() {
+	leftPressed = false;
+}
+
+void Player::StopRight() {
+	rightPressed = false;
+}
+
+void Player::StopDown() {
+	downPressed = false;
+}
+
+void Player::StopUp() {
+	upPressed = false;
+}
+
+void Player::Update(float elapsedTime, Vector2i mousePosition) {
+	if (upPressed) {
+		position.y -= speed * elapsedTime;
+	}
+	if (downPressed) {
+		position.y += speed * elapsedTime;
+	}
+	if (leftPressed) {
+		position.x -= speed * elapsedTime;
+	}
+	if (rightPressed) {
+		position.x += speed * elapsedTime;
+	}
+
+	sprite.setPosition(position);
+
+	// Keep player in arena area
+	if (position.x > arena.width - tileSize) {
+		position.x = arena.width - tileSize;
+	}
+	if (position.x < arena.left + tileSize) {
+		position.x = arena.left + tileSize;
+	}
+	if (position.y > arena.height - tileSize) {
+		position.y = arena.height - tileSize;
+	}
+	if (position.y < arena.top + tileSize) {
+		position.y = arena.top + tileSize;
+	}
+
+	float angle = (atan2(mousePosition.y - resolution.y / 2, mousePosition.x - resolution.x / 2) * 180) / 3.141;
+	sprite.setRotation(angle);
+}
+
+void Player::UpgradeSpeed() {
+	speed *= (START_SPEED * .2);
+}
+
+void Player::UpgradeHealth() {
+	health *= (START_HEALTH * .2);
+}
+
+void Player::IncreaseHealthLevel(int amount) {
+	health += amount;
+
+	if (health > maxHealth) {
+		health = maxHealth;
+	}
+}

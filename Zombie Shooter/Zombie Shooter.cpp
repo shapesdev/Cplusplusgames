@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "ZombieArena.h"
 #include "TextureHolder.h"
+#include "Bullet.h"
 
 using namespace sf;
 
@@ -42,6 +43,14 @@ int main()
 	int numZombiesAlive;
 	Zombie* zombies = nullptr;
 
+	Bullet bullets[100];
+	int currentBullet = 0;
+	int bulletsSpare = 24;
+	int bulletInClip = 6;
+	int clipSize = 6;
+	float fireRate = 1;
+	Time lastPressed;
+
 	while (window.isOpen()) {
 		Event event;
 		while (window.pollEvent(event)) {
@@ -58,7 +67,19 @@ int main()
 				}
 				
 				if (state == State::PLAYING) {
+					if (event.key.code == Keyboard::R) {
+						if (bulletsSpare >= clipSize) {
+							bulletInClip = clipSize;
+							bulletsSpare -= clipSize;
+						}
+						else if (bulletsSpare > 0) {
+							bulletInClip = bulletsSpare;
+							bulletsSpare = 0;
+						}
+						else {
 
+						}
+					}
 				}
 			}
 		}
@@ -96,6 +117,21 @@ int main()
 			}
 			else {
 				player.StopRight();
+			}
+
+			if (Mouse::isButtonPressed(sf::Mouse::Left)) {
+				if (gameTimeTotal.asMilliseconds() - lastPressed.asMilliseconds() > 1000 / fireRate && bulletInClip > 0) {
+					bullets[currentBullet].Shoot(player.GetCenter().x, player.GetCenter().y,
+						mouseWorldPosition.x, mouseWorldPosition.y);
+
+					currentBullet++;
+					if (currentBullet > 99) {
+						currentBullet = 0;
+					}
+					lastPressed = gameTimeTotal;
+
+					bulletInClip--;
+				}
 			}
 		}
 
@@ -162,6 +198,12 @@ int main()
 					zombies[i].Update(dt.asSeconds(), playerPosition);
 				}
 			}
+
+			for (int i = 0; i < 100; i++) {
+				if (bullets[i].IsInFlight()) {
+					bullets[i].Update(dtAsSeconds);
+				}
+			}
 		}
 
 		// DRAWING
@@ -175,6 +217,12 @@ int main()
 
 			for (int i = 0; i < numZombies; i++) {
 				window.draw(zombies[i].GetSprite());
+			}
+
+			for (int i = 0; i < 100; i++) {
+				if (bullets[i].IsInFlight()) {
+					window.draw(bullets[i].GetShape());
+				}
 			}
 
 			window.draw(player.GetSprite());

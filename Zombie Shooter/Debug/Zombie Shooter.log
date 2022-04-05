@@ -1,136 +1,22 @@
-﻿  Bullet.cpp
-  CreateHorde.cpp
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\CreateHorde.cpp(21,9): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\CreateHorde.cpp(22,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\CreateHorde.cpp(26,9): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\CreateHorde.cpp(27,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\CreateHorde.cpp(30,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\CreateHorde.cpp(31,9): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\CreateHorde.cpp(35,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\CreateHorde.cpp(36,9): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Player.cpp
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(6,11): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(7,14): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(14,27): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+﻿  Zombie Shooter.cpp
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Zombie Shooter.cpp(22,44): warning C4244: '=': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(15,28): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Zombie Shooter.cpp(23,44): warning C4244: '=': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(30,11): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(31,14): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(119,28): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Zombie Shooter.cpp(25,56): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(122,27): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Zombie Shooter.cpp(25,42): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(125,29): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(128,26): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(131,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(136,29): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Player.cpp(140,31): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
-  TextureHolder.cpp
-  Zombie Shooter.cpp
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Zombie Shooter.cpp(21,44): warning C4244: '=': conversion from 'unsigned int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Zombie Shooter.cpp(22,44): warning C4244: '=': conversion from 'unsigned int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Zombie Shooter.cpp(24,56): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Zombie Shooter.cpp(24,42): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
-          with
-          [
-              T=float
-          ]
-  Zombie.cpp
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Zombie.cpp(41,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Zombie.cpp(82,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  ZombieArena.cpp
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\ZombieArena.cpp(19,64): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\ZombieArena.cpp(19,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\ZombieArena.cpp(20,78): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\ZombieArena.cpp(20,63): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\ZombieArena.cpp(21,92): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\ZombieArena.cpp(21,63): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\ZombieArena.cpp(22,80): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\ZombieArena.cpp(22,50): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\ZombieArena.cpp(34,54): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\ZombieArena.cpp(35,62): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\ZombieArena.cpp(36,70): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\ZombieArena.cpp(37,62): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-  Generating Code...
-  Zombie Shooter.vcxproj -> C:\Users\shapes\Documents\GitHub\Cplusplusgames\Zombie Shooter\Debug\Zombie Shooter.exe
+  Zombie Shooter.vcxproj -> C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Debug\Zombie Shooter.exe

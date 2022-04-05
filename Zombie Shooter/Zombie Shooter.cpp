@@ -4,6 +4,7 @@
 #include "ZombieArena.h"
 #include "TextureHolder.h"
 #include "Bullet.h"
+#include "Pickup.h"
 
 using namespace sf;
 
@@ -50,6 +51,18 @@ int main()
 	int clipSize = 6;
 	float fireRate = 1;
 	Time lastPressed;
+
+	window.setMouseCursorVisible(true);
+	Sprite spriteCrosshair;
+	Texture textureCrosshair = TextureHolder::GetTexture("Graphics/crosshair.png");
+	spriteCrosshair.setTexture(textureCrosshair);
+	spriteCrosshair.setOrigin(25, 25);
+
+	Pickup healthPickup(1);
+	Pickup ammoPickup(2);
+
+	int score = 0;
+	int hiScore = 0;
 
 	while (window.isOpen()) {
 		Event event;
@@ -164,6 +177,9 @@ int main()
 
 				player.Spawn(arena, resolution, tileSize);
 
+				healthPickup.SetArena(arena);
+				ammoPickup.SetArena(arena);
+
 				numZombies = 10;
 
 				delete[] zombies;
@@ -187,6 +203,8 @@ int main()
 
 			mouseWorldPosition = window.mapPixelToCoords(Mouse::getPosition(), mainView);
 
+			spriteCrosshair.setPosition(mouseWorldPosition);
+
 			player.Update(dtAsSeconds, Mouse::getPosition());
 
 			Vector2f playerPosition(player.GetCenter());
@@ -203,6 +221,50 @@ int main()
 				if (bullets[i].IsInFlight()) {
 					bullets[i].Update(dtAsSeconds);
 				}
+			}
+
+			healthPickup.Update(dtAsSeconds);
+			ammoPickup.Update(dtAsSeconds);
+
+			for (int i = 0; i < 100; i++) {
+				for (int j = 0; j < numZombies; j++) {
+					if (bullets[i].IsInFlight() && zombies[j].IsAlive()) {
+						if (bullets[i].GetPosition().intersects(zombies[j].GetPosition())) {
+							bullets[i].Stop();
+							if (zombies[j].Hit()) {
+								score += 10;
+								if (hiScore <= score) {
+									hiScore = score;
+								}
+
+								numZombiesAlive--;
+
+								if (numZombiesAlive == 0) {
+									state = State::LEVELING_UP;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			for (int i = 0; i < numZombies; i++) {
+				if (player.GetPosition().intersects(zombies[i].GetPosition()) && zombies[i].IsAlive()) {
+					if (player.Hit(gameTimeTotal)) {
+
+					}
+
+					if (player.GetHealth() <= 0) {
+						state = State::GAME_OVER;
+					}
+				}
+			}
+
+			if (player.GetPosition().intersects(healthPickup.GetPosition()) && healthPickup.IsSpawned()) {
+				player.IncreaseHealthLevel(healthPickup.GotIt());
+			}
+			if (player.GetPosition().intersects(ammoPickup.GetPosition()) && ammoPickup.IsSpawned()) {
+				bulletsSpare += ammoPickup.GotIt();
 			}
 		}
 
@@ -226,6 +288,15 @@ int main()
 			}
 
 			window.draw(player.GetSprite());
+
+			if (ammoPickup.IsSpawned()) {
+				window.draw(ammoPickup.GetSprite());
+			}
+			if (healthPickup.IsSpawned()) {
+				window.draw(healthPickup.GetSprite());
+			}
+
+			window.draw(spriteCrosshair);
 		}
 		if (state == State::LEVELING_UP) {
 

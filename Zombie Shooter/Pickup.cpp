@@ -1,5 +1,6 @@
 #include "Pickup.h"
 #include "TextureHolder.h"
+#include <iostream>
 
 Pickup::Pickup(int type) {
 	m_Type = type;
@@ -37,11 +38,12 @@ void Pickup::Spawn() {
 	m_SecondsSinceSpawn = 0;
 	m_Spawned = true;
 
+	std::cout << x << "/" << y;
 	m_Sprite.setPosition(x, y);
 }
 
 FloatRect Pickup::GetPosition() {
-	return m_Sprite.getLocalBounds();
+	return m_Sprite.getGlobalBounds();
 }
 
 Sprite Pickup::GetSprite() {

@@ -1,22 +1,8 @@
-﻿  Zombie Shooter.cpp
-C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Zombie Shooter.cpp(22,44): warning C4244: '=': conversion from 'unsigned int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Zombie Shooter.cpp(23,44): warning C4244: '=': conversion from 'unsigned int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Zombie Shooter.cpp(25,56): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Zombie Shooter.cpp(25,42): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
-          with
-          [
-              T=float
-          ]
+﻿  Pickup.cpp
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Pickup.cpp(19,20): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Pickup.cpp(20,20): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Pickup.cpp(42,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Pickup.cpp(42,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Pickup.cpp(83,39): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Pickup.cpp(86,37): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
   Zombie Shooter.vcxproj -> C:\Users\User\Documents\GitHub\Cplusplusgames\Zombie Shooter\Debug\Zombie Shooter.exe

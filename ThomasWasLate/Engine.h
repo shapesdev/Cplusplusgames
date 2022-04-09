@@ -3,6 +3,7 @@
 #include "TextureHolder.h"
 #include "Thomas.h"
 #include "Bob.h"
+#include "LevelManager.h"
 
 using namespace sf;
 
@@ -17,6 +18,8 @@ private:
 
 	Thomas m_Thomas;
 	Bob m_Bob;
+
+	LevelManager m_LM;
 
 	const int TILE_SIZE = 50;
 	const int VERTS_IN_QUAD = 4;
@@ -46,8 +49,14 @@ private:
 
 	bool m_NewLevelRequired = true;
 
+	VertexArray m_VALevel;
+	int** m_ArrayLevel = NULL;
+	Texture m_TexturesTiles;
+
 	void Input();
 	void Update(float dtAsSeconds);
 	void Draw();
+	void LoadLevel();
+	bool DetectCollisions(PlayableCharacter& character);
 };
 

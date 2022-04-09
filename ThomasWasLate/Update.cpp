@@ -6,16 +6,26 @@ using namespace sf;
 
 void Engine::Update(float dtAsSeconds) {
 	if (m_NewLevelRequired) {
-		m_Thomas.Spawn(Vector2f(0, 0), GRAVITY);
-		m_Bob.Spawn(Vector2f(100, 0), GRAVITY);
-
-		m_TimeRemaining = 10;
-		m_NewLevelRequired = false;
+		LoadLevel();
 	}
 
 	if (m_Playing) {
 		m_Thomas.Update(dtAsSeconds);
 		m_Bob.Update(dtAsSeconds);
+
+		if (DetectCollisions(m_Thomas) && DetectCollisions(m_Bob)) {
+			m_NewLevelRequired = true;
+		}
+		else {
+			DetectCollisions(m_Bob);
+		}
+
+		if (m_Bob.GetFeet().intersects(m_Thomas.GetHead())) {
+			m_Bob.StopFalling(m_Thomas.GetHead().top);
+		}
+		else if (m_Thomas.GetFeet().intersects(m_Bob.GetHead())) {
+			m_Thomas.StopFalling(m_Bob.GetHead().top);
+		}
 
 		m_TimeRemaining -= dtAsSeconds;
 

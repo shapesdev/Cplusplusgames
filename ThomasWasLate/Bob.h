@@ -6,6 +6,6 @@ class Bob : public PlayableCharacter
 public:
 	Bob();
 
-	bool HandleInput();
+	virtual bool HandleInput();
 };
 

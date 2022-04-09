@@ -19,7 +19,6 @@ void Engine::Input() {
 			}
 		}
 	}
-	m_Thomas.HandleInput();
 	if (m_Thomas.HandleInput()) {
 
 	}

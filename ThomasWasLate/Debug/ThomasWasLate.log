@@ -1,27 +1,2 @@
-﻿  PlayableCharacter.cpp
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\ThomasWasLate\PlayableCharacter.cpp(56,21): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\ThomasWasLate\PlayableCharacter.cpp(61,22): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\ThomasWasLate\PlayableCharacter.cpp(63,28): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\ThomasWasLate\PlayableCharacter.cpp(66,21): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\shapes\Documents\GitHub\Cplusplusgames\ThomasWasLate\PlayableCharacter.cpp(68,27): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-  ThomasWasLate.vcxproj -> C:\Users\shapes\Documents\GitHub\Cplusplusgames\ThomasWasLate\Debug\ThomasWasLate.exe
+﻿  Update.cpp
+  ThomasWasLate.vcxproj -> C:\Users\User\Documents\GitHub\Cplusplusgames\ThomasWasLate\Debug\ThomasWasLate.exe

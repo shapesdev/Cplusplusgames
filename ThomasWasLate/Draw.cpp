@@ -8,6 +8,8 @@ void Engine::Draw() {
 		m_Window.draw(m_BackgroundSprite);
 		m_Window.setView(m_MainView);
 
+		m_Window.draw(m_VALevel, &m_TexturesTiles);
+
 		m_Window.draw(m_Thomas.GetSprite());
 		m_Window.draw(m_Bob.GetSprite());
 	}
@@ -16,12 +18,16 @@ void Engine::Draw() {
 		m_Window.draw(m_BackgroundSprite);
 		m_Window.setView(m_LeftView);
 
+		m_Window.draw(m_VALevel, &m_TexturesTiles);
+
 		m_Window.draw(m_Bob.GetSprite());
 		m_Window.draw(m_Thomas.GetSprite());
 
 		m_Window.setView(m_BGRightView);
 		m_Window.draw(m_BackgroundSprite);
 		m_Window.setView(m_RightView);
+
+		m_Window.draw(m_VALevel, &m_TexturesTiles);
 
 		m_Window.draw(m_Thomas.GetSprite());
 		m_Window.draw(m_Bob.GetSprite());

@@ -34,6 +34,19 @@ void Engine::Update(float dtAsSeconds) {
 		}
 	}
 
+	vector<Vector2f>::iterator itr;
+
+	for (itr = m_FireEmitters.begin(); itr != m_FireEmitters.end(); itr++) {
+		float posX = (*itr).x;
+		float posY = (*itr).y;
+
+		FloatRect localRect(posX - 250, posY - 250, 500, 500);
+
+		if (m_Thomas.GetPosition().intersects(localRect)) {
+			m_SM.PlayFire(Vector2f(posX, posY), m_Thomas.GetCenter());
+		}
+	}
+
 	if (m_SplitScreen) {
 		m_LeftView.setCenter(m_Thomas.GetCenter());
 		m_RightView.setCenter(m_Bob.GetCenter());
@@ -45,5 +58,24 @@ void Engine::Update(float dtAsSeconds) {
 		else {
 			m_MainView.setCenter(m_Bob.GetCenter());
 		}
+	}
+
+	m_FramesSinceLastHUDUpdate++;
+
+	if (m_FramesSinceLastHUDUpdate > m_TargetFramesPerHUDUpdate) {
+		stringstream ssTime;
+		stringstream ssLevel;
+
+		ssTime << (int)m_TimeRemaining;
+		m_HUD.SetTime(ssTime.str());
+
+		ssLevel << "Level: " << m_LM.GetCurrentLevel();
+		m_HUD.SetLevel(ssLevel.str());
+
+		m_FramesSinceLastHUDUpdate = 0;
+	}
+
+	if (m_PS.Running()) {
+		m_PS.Update(dtAsSeconds);
 	}
 }

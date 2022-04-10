@@ -20,10 +20,10 @@ void Engine::Input() {
 		}
 	}
 	if (m_Thomas.HandleInput()) {
-
+		m_SM.PlayJump();
 	}
 
 	if (m_Bob.HandleInput()) {
-
+		m_SM.PlayJump();
 	}
 }

@@ -35,10 +35,10 @@ bool Engine::DetectCollisions(PlayableCharacter& character) {
 				if (character.GetHead().intersects(block)) {
 					character.Spawn(m_LM.GetStartPosition(), GRAVITY);
 					if (m_ArrayLevel[y][x] == 2) {
-
+						m_SM.PlayFallInFire();
 					}
 					else {
-
+						m_SM.PlayFallInWater();
 					}
 				}
 			}
@@ -55,6 +55,14 @@ bool Engine::DetectCollisions(PlayableCharacter& character) {
 				}
 				else if (character.GetHead().intersects(block)) {
 					character.StopJump();
+				}
+			}
+
+			if (!m_PS.Running()) {
+				if (m_ArrayLevel[y][x] == 2 || m_ArrayLevel[y][x] == 3) {
+					if (character.GetFeet().intersects(block)) {
+						m_PS.EmitParticles(character.GetCenter());
+					}
 				}
 			}
 

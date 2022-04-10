@@ -1,2 +1,22 @@
-﻿  Update.cpp
+﻿  Engine.cpp
+C:\Users\User\Documents\GitHub\Cplusplusgames\ThomasWasLate\Engine.cpp(5,44): warning C4244: '=': conversion from 'unsigned int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\User\Documents\GitHub\Cplusplusgames\ThomasWasLate\Engine.cpp(6,44): warning C4244: '=': conversion from 'unsigned int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\User\Documents\GitHub\Cplusplusgames\ThomasWasLate\Engine.cpp(8,52): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\User\Documents\GitHub\Cplusplusgames\ThomasWasLate\Engine.cpp(8,38): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
+          with
+          [
+              T=float
+          ]
   ThomasWasLate.vcxproj -> C:\Users\User\Documents\GitHub\Cplusplusgames\ThomasWasLate\Debug\ThomasWasLate.exe

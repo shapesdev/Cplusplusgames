@@ -15,10 +15,19 @@ Engine::Engine() {
 	m_BGLeftView.setViewport(FloatRect(0.001f, 0.001f, 0.498f, 0.998f));
 	m_BGRightView.setViewport(FloatRect(0.5f, 0.001f, 0.499f, 0.998f));
 
+	if (!sf::Shader::isAvailable()) {
+		m_Window.close();
+	}
+	else {
+		m_RippleShader.loadFromFile("Shaders/vertShader.vert", "Shaders/rippleShader.frag");
+	}
+
 	m_BackgroundTexture = TextureHolder::GetTexture("Graphics/background.png");
 	m_BackgroundSprite.setTexture(m_BackgroundTexture);
 
 	m_TexturesTiles = TextureHolder::GetTexture("Graphics/tiles_sheet.png");
+
+	m_PS.Init(1000);
 }
 
 void Engine::Run() {

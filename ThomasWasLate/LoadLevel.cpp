@@ -10,6 +10,8 @@ void Engine::LoadLevel() {
 
 	m_ArrayLevel = m_LM.NextLevel(m_VALevel);
 
+	PopulateEmitters(m_FireEmitters, m_ArrayLevel);
+
 	m_TimeRemaining = m_LM.GetTimeLimit();
 
 	m_Thomas.Spawn(m_LM.GetStartPosition(), GRAVITY);

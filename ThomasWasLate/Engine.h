@@ -4,6 +4,9 @@
 #include "Thomas.h"
 #include "Bob.h"
 #include "LevelManager.h"
+#include "SoundManager.h"
+#include "HUD.h"
+#include "ParticleSystem.h"
 
 using namespace sf;
 
@@ -19,7 +22,14 @@ private:
 	Thomas m_Thomas;
 	Bob m_Bob;
 
+	ParticleSystem m_PS;
+
 	LevelManager m_LM;
+	SoundManager m_SM;
+
+	HUD m_HUD;
+	int m_FramesSinceLastHUDUpdate = 0;
+	int m_TargetFramesPerHUDUpdate = 500;
 
 	const int TILE_SIZE = 50;
 	const int VERTS_IN_QUAD = 4;
@@ -40,6 +50,8 @@ private:
 	Sprite m_BackgroundSprite;
 	Texture m_BackgroundTexture;
 
+	Shader m_RippleShader;
+
 	bool m_Playing;
 	bool m_Character1 = true;
 	bool m_SplitScreen = false;
@@ -53,10 +65,13 @@ private:
 	int** m_ArrayLevel = NULL;
 	Texture m_TexturesTiles;
 
+	vector <Vector2f> m_FireEmitters;
+
 	void Input();
 	void Update(float dtAsSeconds);
 	void Draw();
 	void LoadLevel();
 	bool DetectCollisions(PlayableCharacter& character);
+	void PopulateEmitters(vector <Vector2f>& vSoundEmitters, int** arrayLevel);
 };
 

@@ -1,2 +1,10 @@
-﻿  Space Invaders.cpp
+﻿  GameScreen.cpp
+C:\Users\User\Documents\GitHub\Cplusplusgames\Space Invaders\GameScreen.cpp(21,20): warning C4244: 'initializing': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Space Invaders\GameScreen.cpp(23,53): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Space Invaders\GameScreen.cpp(25,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\Cplusplusgames\Space Invaders\GameScreen.cpp(26,82): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
   Space Invaders.vcxproj -> C:\Users\User\Documents\GitHub\Cplusplusgames\Space Invaders\Debug\Space Invaders.exe

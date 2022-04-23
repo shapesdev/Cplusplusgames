@@ -23,7 +23,7 @@ public:
 
 	void ScreenManagerRemoteControl::SwitchScreens(string screenToSwitchTo) {
 		m_CurrentScreen = "" + screenToSwitchTo;
-		m_Screens[m_CurrentScreen]->Initialize();
+		m_Screens[m_CurrentScreen]->Initialise();
 	}
 
 	void ScreenManagerRemoteControl::LoadLevelInPlayMode(string screenToLoad) {

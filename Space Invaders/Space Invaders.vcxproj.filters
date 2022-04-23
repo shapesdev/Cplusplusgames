@@ -49,6 +49,12 @@
     <Filter Include="Source Files\Screens\Select">
       <UniqueIdentifier>{b2c2c393-f8aa-4c05-9bf4-8477640de9e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Screens\Base">
+      <UniqueIdentifier>{7066da1c-d6bc-4d3f-908c-8c810d423604}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Screens\Base">
+      <UniqueIdentifier>{fdfe3ff7-6190-4f2b-9b55-1841f3e5d7f8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameEngine.cpp">
@@ -66,21 +72,6 @@
     <ClCompile Include="BitmapStore.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="ScreenManagerRemoteControl.cpp">
-      <Filter>Source Files\Screens</Filter>
-    </ClCompile>
-    <ClCompile Include="Button.cpp">
-      <Filter>Source Files\Screens</Filter>
-    </ClCompile>
-    <ClCompile Include="UIPanel.cpp">
-      <Filter>Source Files\Screens</Filter>
-    </ClCompile>
-    <ClCompile Include="InputHandler.cpp">
-      <Filter>Source Files\Screens</Filter>
-    </ClCompile>
-    <ClCompile Include="Screen.cpp">
-      <Filter>Source Files\Screens</Filter>
-    </ClCompile>
     <ClCompile Include="SelectScreen.cpp">
       <Filter>Source Files\Screens\Select</Filter>
     </ClCompile>
@@ -89,6 +80,36 @@
     </ClCompile>
     <ClCompile Include="SelectUIPanel.cpp">
       <Filter>Source Files\Screens\Select</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScreen.cpp">
+      <Filter>Source Files\Screens\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files\Screens\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="InputHandler.cpp">
+      <Filter>Source Files\Screens\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen.cpp">
+      <Filter>Source Files\Screens\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenManagerRemoteControl.cpp">
+      <Filter>Source Files\Screens\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="UIPanel.cpp">
+      <Filter>Source Files\Screens\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="GameInputHandler.cpp">
+      <Filter>Source Files\Screens\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameUIPanel.cpp">
+      <Filter>Source Files\Screens\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOverInputHandler.cpp">
+      <Filter>Source Files\Screens\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOverUIPanel.cpp">
+      <Filter>Source Files\Screens\Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -107,21 +128,6 @@
     <ClInclude Include="BitmapStore.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="ScreenManagerRemoteControl.h">
-      <Filter>Header Files\Screens</Filter>
-    </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>Header Files\Screens</Filter>
-    </ClInclude>
-    <ClInclude Include="UIPanel.h">
-      <Filter>Header Files\Screens</Filter>
-    </ClInclude>
-    <ClInclude Include="InputHandler.h">
-      <Filter>Header Files\Screens</Filter>
-    </ClInclude>
-    <ClInclude Include="Screen.h">
-      <Filter>Header Files\Screens</Filter>
-    </ClInclude>
     <ClInclude Include="WorldState.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
@@ -133,6 +139,36 @@
     </ClInclude>
     <ClInclude Include="SelectUIPanel.h">
       <Filter>Header Files\Screens\Select</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScreen.h">
+      <Filter>Header Files\Screens\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files\Screens\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="InputHandler.h">
+      <Filter>Header Files\Screens\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Screen.h">
+      <Filter>Header Files\Screens\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenManagerRemoteControl.h">
+      <Filter>Header Files\Screens\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="UIPanel.h">
+      <Filter>Header Files\Screens\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="GameInputHandler.h">
+      <Filter>Header Files\Screens\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameUIPanel.h">
+      <Filter>Header Files\Screens\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverInputHandler.h">
+      <Filter>Header Files\Screens\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverUIPanel.h">
+      <Filter>Header Files\Screens\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

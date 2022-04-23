@@ -1,7 +1,7 @@
 #pragma once
 #include "UIPanel.h"
 
-class SelectUIPanel : UIPanel
+class SelectUIPanel : public UIPanel
 {
 public:
 	SelectUIPanel(Vector2i res);

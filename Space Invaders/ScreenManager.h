@@ -5,6 +5,7 @@
 #include "GameScreen.h"
 #include "ScreenManagerRemoteControl.h"
 #include "SelectScreen.h"
+#include "LevelManager.h"
 #include "BitmapStore.h"
 
 using namespace sf;
@@ -27,7 +28,18 @@ public:
 	}
 
 	void ScreenManagerRemoteControl::LoadLevelInPlayMode(string screenToLoad) {
+		m_LevelManager.GetGameObjects().clear();
+		m_LevelManager.LoadGameObjectsForPlayMode(screenToLoad);
+
 		SwitchScreens("Game");
+	}
+
+	vector<GameObject>& ScreenManagerRemoteControl::GetGameObjects() {
+		return m_LevelManager.GetGameObjects();
+	}
+
+	GameObjectSharer& ShareGameObjectSharer() {
+		return m_LevelManager;
 	}
 
 protected:
@@ -35,5 +47,6 @@ protected:
 
 private:
 	map<string, unique_ptr<Screen>> m_Screens;
+	LevelManager m_LevelManager;
 };
 

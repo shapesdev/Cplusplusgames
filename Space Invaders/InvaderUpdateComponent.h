@@ -22,7 +22,7 @@ public:
 		m_PlayerTC = static_pointer_cast<TransformComponent>(gos->FindFirstObjectWithTag("Player").GetComponentByTypeAndSpecificType(
 			"Transform", "Transform"));
 
-		m_PlayeraRCC = static_pointer_cast<RectColliderComponent>(gos->FindFirstObjectWithTag("Player").GetComponentByTypeAndSpecificType(
+		m_PlayerRCC = static_pointer_cast<RectColliderComponent>(gos->FindFirstObjectWithTag("Player").GetComponentByTypeAndSpecificType(
 			"Collider", "Rect"));
 
 		m_TC = static_pointer_cast<TransformComponent>(self->GetComponentByTypeAndSpecificType(

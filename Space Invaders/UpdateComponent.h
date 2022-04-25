@@ -1,7 +1,7 @@
 #pragma once
 #include "Component.h"
 
-class UpdateComponent : Component
+class UpdateComponent : public Component
 {
 public:
 	virtual void Update(float fps) = 0;

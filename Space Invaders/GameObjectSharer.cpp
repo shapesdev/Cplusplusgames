@@ -1,0 +1,3 @@
+#include "GameObjectSharer.h"
+
+// Interface

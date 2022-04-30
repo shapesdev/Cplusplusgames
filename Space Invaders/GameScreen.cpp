@@ -3,6 +3,12 @@
 #include "GameInputHandler.h"
 #include "GameOverUIPanel.h"
 #include "WorldState.h"
+#include "GameObject.h"
+#include "WorldState.h"
+#include "BulletUpdateComponent.h"
+#include "InvaderUpdateComponent.h"
+
+class BulletSpawner;
 
 int WorldState::WORLD_HEIGHT;
 int WorldState::NUM_INVADERS;
@@ -33,8 +39,24 @@ GameScreen::GameScreen(ScreenManagerRemoteControl* smrc, Vector2i res) {
 
 void GameScreen::Initialise() {
 	m_GIH->Initialise();
+	m_PhysicsEnginePlayMode.Initialise(m_ScreenManagerRemoteControl->ShareGameObjectSharer());
 
 	WorldState::NUM_INVADERS = 0;
+
+	int i = 0;
+	auto it = m_ScreenManagerRemoteControl->GetGameObjects().begin();
+	auto end = m_ScreenManagerRemoteControl->GetGameObjects().end();
+
+	for (it; it != end; ++it) {
+		if ((*it).GetTag() == "Bullet") {
+			m_BulletObjectLocations.push_back(i);
+		}
+		if ((*it).GetTag() == "Invader") {
+			static_pointer_cast<InvaderUpdateComponent>((*it).GetFirstUpdateComponent())->InitialiseBulletSpawner(GetBulletSpawner(), i);
+			WorldState::NUM_INVADERS++;
+		}
+		++i;
+	}
 
 	m_GameOver = false;
 
@@ -51,6 +73,38 @@ void GameScreen::Update(float fps) {
 	Screen::Update(fps);
 
 	if (!m_GameOver) {
+
+		if (m_WaitingToSpawnBulletForPlayer) {
+			static_pointer_cast<BulletUpdateComponent>(m_ScreenManagerRemoteControl->GetGameObjects()[m_BulletObjectLocations[m_NextBullet]]
+				.GetFirstUpdateComponent())->SpawnForPlayer(m_PlayerBulletSpawnLocation);
+			m_WaitingToSpawnBulletForPlayer = false;
+			m_NextBullet++;
+
+			if (m_NextBullet == m_BulletObjectLocations.size()) {
+				m_NextBullet = 0;
+			}
+		}
+
+		if (m_WaitingToSpawnBulletForInvader) {
+			static_pointer_cast<BulletUpdateComponent>(m_ScreenManagerRemoteControl->GetGameObjects()[m_BulletObjectLocations[m_NextBullet]]
+				.GetFirstUpdateComponent())->SpawnForInvader(m_InvaderBulletSpawnLocation);
+			m_WaitingToSpawnBulletForInvader = false;
+			m_NextBullet++;
+
+			if (m_NextBullet == m_BulletObjectLocations.size()) {
+				m_NextBullet = 0;
+			}
+		}
+
+		auto it = m_ScreenManagerRemoteControl->GetGameObjects().begin();
+		auto end = m_ScreenManagerRemoteControl->GetGameObjects().end();
+
+		for (it; it != end; ++it) {
+			(*it).Update(fps);
+		}
+
+		m_PhysicsEnginePlayMode.DetectCollisions(m_ScreenManagerRemoteControl->GetGameObjects(), m_BulletObjectLocations);
+
 		if (WorldState::NUM_INVADERS <= 0) {
 			WorldState::WAVE_NUMBER++;
 			m_ScreenManagerRemoteControl->LoadLevelInPlayMode("level1");
@@ -65,5 +119,16 @@ void GameScreen::Draw(RenderWindow& window) {
 	window.setView(m_View);
 	window.draw(m_BackgroundSprite);
 
+	auto it = m_ScreenManagerRemoteControl->GetGameObjects().begin();
+	auto end = m_ScreenManagerRemoteControl->GetGameObjects().end();
+
+	for (it; it != end; ++it) {
+		(*it).Draw(window);
+	}
+
 	Screen::Draw(window);
+}
+
+BulletSpawner* GameScreen::GetBulletSpawner() {
+	return this;
 }

@@ -2,8 +2,10 @@
 #include "Screen.h"
 #include "GameInputHandler.h"
 #include "GameOverInputHandler.h"
+#include "BulletSpawner.h"
+#include "PhysicsEnginePlayMode.h"
 
-class GameScreen : public Screen
+class GameScreen : public Screen, public BulletSpawner
 {
 public:
 	static bool m_GameOver;
@@ -13,9 +15,40 @@ public:
 	void virtual Update(float fps);
 	void virtual Draw(RenderWindow& window);
 
+	BulletSpawner* GetBulletSpawner();
+
+	void BulletSpawner::SpawnBullet(Vector2f spawnLocation, bool forPlayer) {
+		if (forPlayer) {
+			Time elapsedTime = m_BulletClock.getElapsedTime();
+			if (elapsedTime.asMicroseconds() > 500) {
+				m_PlayerBulletSpawnLocation.x = spawnLocation.x;
+				m_PlayerBulletSpawnLocation.y = spawnLocation.y;
+				m_WaitingToSpawnBulletForPlayer = true;
+				m_BulletClock.restart();
+			}
+			else {
+				m_InvaderBulletSpawnLocation.x = spawnLocation.x;
+				m_InvaderBulletSpawnLocation.y = spawnLocation.y;
+				m_WaitingToSpawnBulletForInvader = true;
+			}
+		}
+	}
+
 private:
 	ScreenManagerRemoteControl* m_ScreenManagerRemoteControl;
 	shared_ptr<GameInputHandler> m_GIH;
+	PhysicsEnginePlayMode m_PhysicsEnginePlayMode;
+
+	int m_NumberInvadersInWorldFile = 0;
+
+	vector<int> m_BulletObjectLocations;
+	int m_NextBullet = 0;
+	bool m_WaitingToSpawnBulletForPlayer = false;
+	bool m_WaitingToSpawnBulletForInvader = false;
+	Vector2f m_PlayerBulletSpawnLocation;
+	Vector2f m_InvaderBulletSpawnLocation;
+
+	Clock m_BulletClock;
 
 	Texture m_BackgroundTexture;
 	Sprite m_BackgroundSprite;

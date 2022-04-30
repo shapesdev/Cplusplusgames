@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClCompile Include="BitmapStore.cpp" />
     <ClCompile Include="BlueprintObjectParser.cpp" />
+    <ClCompile Include="BulletSpawner.cpp" />
     <ClCompile Include="BulletUpdate.cpp" />
     <ClCompile Include="BulletUpdateComponent.cpp" />
     <ClCompile Include="Button.cpp" />
@@ -165,6 +166,7 @@
     <ClCompile Include="InvaderUpdateComponent.cpp" />
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="ObjectTags.cpp" />
+    <ClCompile Include="PhysicsEnginePlayMode.cpp" />
     <ClCompile Include="PlayerUpdate.cpp" />
     <ClCompile Include="PlayerUpdateComponent.cpp" />
     <ClCompile Include="PlayModeObjectLoader.cpp" />
@@ -185,6 +187,7 @@
   <ItemGroup>
     <ClInclude Include="BitmapStore.h" />
     <ClInclude Include="BlueprintObjectParser.h" />
+    <ClInclude Include="BulletSpawner.h" />
     <ClInclude Include="BulletUpdateComponent.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="ColliderComponent.h" />
@@ -205,6 +208,7 @@
     <ClInclude Include="InvaderUpdateComponent.h" />
     <ClInclude Include="LevelManager.h" />
     <ClInclude Include="ObjectTags.h" />
+    <ClInclude Include="PhysicsEnginePlayMode.h" />
     <ClInclude Include="PlayerUpdateComponent.h" />
     <ClInclude Include="PlayModeObjectLoader.h" />
     <ClInclude Include="RectColliderComponent.h" />
